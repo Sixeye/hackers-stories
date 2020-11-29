@@ -24,8 +24,10 @@ const list = [
     },
 ];
 
-function App() {
+const App = () => {
     const greet = 'Hallo hallo'
+
+    console.log('Great arrow function')
 
     return (
         <div>
@@ -34,27 +36,22 @@ function App() {
             <input id="search" type="text" />
             <hr/>
             <List />
+            <List />
+            <List />
         </div>
 )
 }
 
-function List() {
-    return (
-        <div>
-            {list.map(function(item) {
-                return (
-                    <div key={item.objectID}>
+const List = () =>
+    list.map(item => (
+        <div key={item.objectID}>
             <span>
               <a href={item.url}>{item.title}</a>
             </span>
-                        <span>{item.author}</span>
-                        <span>{item.num_comments}</span>
-                        <span>{item.points}</span>
-                    </div>
-                );
-            })}
+            <span>{item.author}</span>
+            <span>{item.num_comments}</span>
+            <span>{item.points}</span>
         </div>
-    );
-}
+    ));
 
 export default App
