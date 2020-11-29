@@ -25,21 +25,23 @@ const list = [
 ];
 
 const App = () => {
-    const greet = 'Hallo hallo'
 
-    console.log('Great arrow function')
+    const handleChange = event => {
+        console.log(event.target.value);
+    };
 
     return (
         <div>
-            <h1> 🚀 {greet} {getTitle('React JS')} </h1>
+            <h1>My Hacker Stories</h1>
+
             <label htmlFor="search">Search: </label>
-            <input id="search" type="text" />
-            <hr/>
-            <List />
-            <List />
+            <input id="search" type="text" onChange={handleChange} />
+
+            <hr />
+
             <List />
         </div>
-)
+    );
 }
 
 const List = () =>
